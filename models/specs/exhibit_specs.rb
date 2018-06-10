@@ -5,7 +5,7 @@ class TestExhibit < MiniTest::Test
 
   def setup
     options = {"id" => 1, "title" => "The persistent of memory",
-      "date" => 1931, "artist_id" => 1}
+      "date" => 1931, "artist_id" => 1, "category" => "Surrealism"}
 
       @exhibit = Exhibit.new(options)
   end
@@ -18,6 +18,11 @@ class TestExhibit < MiniTest::Test
     def test_exhibit_has_a_date
       result = @exhibit.date()
       assert_equal(1931, result)
+    end
+
+    def test_exhibit_has_a_category
+      result = @exhibit.category()
+      assert_equal("Surrealism", result)
     end
 
 end

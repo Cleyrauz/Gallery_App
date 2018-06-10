@@ -27,25 +27,29 @@ artist3.save
 exhibit1 = Exhibit.new({
  "title" => "The persistent of memory",
  "date" => 1931,
- "artist_id" => artist1.id
+ "artist_id" => artist1.id,
+ "category" => "Surrealism"
   })
 
  exhibit2 = Exhibit.new({
  "title" => "Melting watch",
  "date" => 1954,
- "artist_id" => artist1.id
+ "artist_id" => artist1.id,
+ "category" => "Surrealism"
  })
 
  exhibit3 = Exhibit.new({
   "title" => "Girl at the window",
   "date" => 1931,
-  "artist_id" => artist3.id
+  "artist_id" => artist3.id,
+  "category" => "Surrealism"
   })
 
   exhibit4 = Exhibit.new({
   "title" => "Guernica",
   "date" => 1937,
-  "artist_id" => artist3.id
+  "artist_id" => artist3.id,
+  "category" => "Surrealism"
   })
 
   exhibit1.save
