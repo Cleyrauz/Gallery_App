@@ -13,11 +13,18 @@ artist1 = Artist.new({
   "style" => "Surrealism"
   })
 
+  artist3 = Artist.new({
+  "name" => "Pablo Picasso",
+  "style" => "Surrealism"
+  })
+
 artist1.save
 artist2.save
+artist3.save
 
 artist2.style = "Art Nouveau"
-artist2.save
+
+artist3.delete
 
 binding.pry
 nil
