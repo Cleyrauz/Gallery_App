@@ -15,5 +15,10 @@ class TestExhibit < MiniTest::Test
       assert_equal("The persistent of memory", result)
     end
 
+    def test_exhibit_has_a_date
+      result = @exhibit.date()
+      assert_equal(1931, result)
+    end
+
 
 end
