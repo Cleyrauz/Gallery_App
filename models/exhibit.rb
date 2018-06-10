@@ -67,4 +67,12 @@ class Exhibit
       return result
     end
 
+    def self.find( id )
+      sql = "SELECT * FROM exhibits WHERE id = $1"
+      value = [id]
+      exhibit = SqlRunner.run(sql, value)
+      result = Exhibit.new( exhibit.first )
+      return result
+    end
+
 end

@@ -62,6 +62,8 @@ exhibit2.update
 Artist.all
 Exhibit.all
 
+Exhibit.find(exhibit1.id)
+
 binding.pry
 artist3.delete
 exhibit3.delete
