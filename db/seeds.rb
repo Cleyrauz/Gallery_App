@@ -60,8 +60,7 @@ exhibit2.date = 1953
 exhibit2.update
 
 Artist.all
-
-
+Exhibit.all
 
 binding.pry
 artist3.delete

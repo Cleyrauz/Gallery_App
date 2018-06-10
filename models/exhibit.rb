@@ -60,4 +60,11 @@ class Exhibit
       SqlRunner.run( sql, values )
     end
 
+    def self.all()
+      sql = "SELECT * FROM exhibits"
+      exhibits = SqlRunner.run( sql )
+      result = exhibits.map { |exhibit| Exhibit.new( exhibit) }
+      return result
+    end
+
 end
