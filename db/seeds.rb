@@ -39,7 +39,7 @@ exhibit1 = Exhibit.new({
  exhibit3 = Exhibit.new({
   "title" => "Girl at the window",
   "date" => 1931,
-  "artist_id" => artist1.id
+  "artist_id" => artist3.id
   })
 
   exhibit4 = Exhibit.new({
@@ -64,6 +64,7 @@ Exhibit.all
 
 Exhibit.find(exhibit1.id)
 Artist.find(artist2.id)
+exhibit1.assing_exhibit_to_an_artist(artist1.id)
 
 binding.pry
 artist3.delete
