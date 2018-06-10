@@ -15,4 +15,21 @@ class Exhibit
     @artist_id = options['artist_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO exhibits
+    (
+      title,
+      date,
+      artist_id
+    )
+    VALUES
+    (
+      $1, $2, $3
+    )
+    RETURNING *"
+    values = [@title, @date, @artist_id]
+    exhibit_data = SqlRunner.run(sql, values)
+    @id = exhibit_data.first()['id'].to_i
+  end
+
 end
