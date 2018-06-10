@@ -23,8 +23,9 @@ artist2.save
 artist3.save
 
 artist2.style = "Art Nouveau"
+artist2.update
 
-artist3.delete
+Artist.all
 
 binding.pry
-nil
+artist3.delete
