@@ -61,5 +61,8 @@ exhibit2.update
 
 Artist.all
 
+
+
 binding.pry
 artist3.delete
+exhibit3.delete

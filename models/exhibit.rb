@@ -53,4 +53,11 @@ class Exhibit
      SqlRunner.run(sql)
    end
 
+   def delete()
+      sql = "DELETE FROM exhibits
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run( sql, values )
+    end
+
 end
