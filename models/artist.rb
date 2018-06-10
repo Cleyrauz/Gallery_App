@@ -29,5 +29,21 @@ class Artist
     @id = artist_data.first()['id'].to_i
   end
 
+  def update()
+   sql = "UPDATE artists
+   SET
+   (
+     name,
+     style
+   ) =
+   (
+     $1, $2
+   )
+   WHERE id = $3"
+   values = [@name, @style, @id]
+   SqlRunner.run( sql, values )
+ end
+
+
 
 end

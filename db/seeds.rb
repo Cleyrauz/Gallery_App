@@ -13,3 +13,9 @@ artist1 = Artist.new({
 
 artist1.save
 artist2.save
+
+artist2.style = "Art Nouveau"
+artist2.save
+
+binding.pry
+nil
