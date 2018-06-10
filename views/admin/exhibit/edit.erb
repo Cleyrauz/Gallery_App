@@ -1,0 +1,19 @@
+<form method="post" action="/admin/exhibit/<%=@exhibit.id%>/edit">
+  <label for="title">Title:</label>
+  <input id="title" type="text" name="title"/><br />
+
+  <label for="date">Created:</label>
+  <input id="date" type="text" name="date"/><br />
+
+  <label for="artist_select">Select Artist:</label>
+  <select name="artist_id" id="artist_select">
+    <% @artists.each do |artist| %>
+    <option value="<%= artist.id %>"><%= artist.name %></option>
+    <% end %>
+  </select>
+
+  <label for="Category">Category:</label>
+  <input id="category" type="text" name="category"/><br />
+
+  <input type='submit' value="Update exhibit"/>
+</form>

@@ -1,0 +1,26 @@
+<h1>Exhibits</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th>Created</th>
+    <th></th>
+    <th>Artist</th>
+    <th></th>
+    <th>Category</th>
+  </tr>
+  <% for exhibit in @exhibits %>
+  <tr>
+    <td><a href="/admin/exhibit/<%= exhibit.id %>"><%= exhibit.title %></a></td>
+    <td>|</td>
+    <td><%= exhibit.date %></td>
+    <td>|</td>
+    <td><%= exhibit.get_artist_name%></td>
+    <td>|</td>
+    <td><%= exhibit.category%></td>
+  </tr>
+  <% end %>
+</table>
+
+<a href="/admin/exhibit/new">Create new exhibit</a>

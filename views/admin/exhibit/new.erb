@@ -1,0 +1,19 @@
+<form method="post" action="/admin/exhibit">
+  <laber for="title">Title:</label>
+    <input id="title" type="text" name="title"/>
+
+    <laber for="date">Created:</label>
+      <input id="date" type="text" name="date"/>
+
+        <label for="artist_select">Select Artist:</label>
+        <select name="artist_id" id="artist_select">
+          <% @artists.each do |artist| %>
+          <option value="<%= artist.id %>"><%= artist.name %></option>
+          <% end %>
+        </select>
+
+        <laber for="category">Category:</label>
+          <input id="category" type="text" name="category"/>
+
+          <input type='submit' value="Create exhibit"/>
+        </form>

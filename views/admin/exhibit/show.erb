@@ -1,0 +1,13 @@
+<p>Name: <%= @exhibit.title() %></p>
+<p>Created: <%= @exhibit.date() %></p>
+<p>Artist: <%= @exhibit.get_artist_name() %></p>
+<p>Category: <%= @exhibit.category() %></p>
+
+
+<form method="post" action="/admin/exhibit/<%=@exhibit.id%>/delete">
+<input type='submit' value="Delete"/>
+</form>
+
+<form method="get" action="/admin/exhibit/<%=@exhibit.id%>/edit">
+<input type='submit' value="Edit exhibit"/>
+</form>

@@ -1,0 +1,18 @@
+<h1>Artists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Style</th>
+  </tr>
+  <% for artist in @artists %>
+  <tr>
+    <td><a href="/admin/artist/<%= artist.id %>"><%= artist.name %></a></td>
+    <td>|</td>
+    <td><%= artist.style %></td>
+  </tr>
+  <% end %>
+</table>
+
+<a href="/admin/artist/new">Create new artist</a>

@@ -86,4 +86,12 @@ class Exhibit
       SqlRunner.run( sql, values )
     end
 
+    def get_artist_name
+      sql = "SELECT artists.name FROM artists WHERE id = $1"
+      value = [@artist_id]
+      artist = SqlRunner.run(sql, value)
+      result = Artist.new(artist.first)
+      return result.name
+    end
+
 end
