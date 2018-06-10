@@ -3,6 +3,7 @@ require_relative('../models/exhibit')
 require('pry-byebug')
 
 Artist.delete_all()
+Exhibit.delete_all()
 
   artist1 = Artist.new({
   "name" => "Salvador Dali",
@@ -54,6 +55,9 @@ exhibit1 = Exhibit.new({
 
 artist2.style = "Art Nouveau"
 artist2.update
+
+exhibit2.date = 1953
+exhibit2.update
 
 Artist.all
 

@@ -32,4 +32,25 @@ class Exhibit
     @id = exhibit_data.first()['id'].to_i
   end
 
+  def update()
+   sql = "UPDATE exhibits
+   SET
+   (
+     title,
+     date,
+     artist_id
+   ) =
+   (
+     $1, $2, $3
+   )
+   WHERE id = $4"
+   values = [@title, @date, @artist_id, @id]
+   SqlRunner.run( sql, values )
+ end
+
+   def self.delete_all()
+     sql = "DELETE FROM exhibits;"
+     SqlRunner.run(sql)
+   end
+
 end
