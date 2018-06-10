@@ -1,6 +1,8 @@
 require_relative('../models/artist')
 require('pry-byebug')
 
+Artist.delete_all()
+
 artist1 = Artist.new({
   "name" => "Salvador Dali",
   "style" => "Surrealism"
