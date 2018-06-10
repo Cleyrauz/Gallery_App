@@ -63,6 +63,7 @@ Artist.all
 Exhibit.all
 
 Exhibit.find(exhibit1.id)
+Artist.find(artist2.id)
 
 binding.pry
 artist3.delete
