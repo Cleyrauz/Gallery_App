@@ -20,5 +20,4 @@ class TestExhibit < MiniTest::Test
       assert_equal(1931, result)
     end
 
-
 end
