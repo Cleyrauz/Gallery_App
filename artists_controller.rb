@@ -1,7 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative( '../models/artist.rb' )
-also_reload( '../models/*' )
+require_relative( './models/artist.rb' )
+also_reload( './models/*' )
 
 get '/admin/artist' do
   @artists = Artist.all()

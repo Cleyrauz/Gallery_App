@@ -1,8 +1,8 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative( '../models/exhibit.rb' )
-require_relative( '../models/artist.rb' )
-also_reload( '../models/*' )
+require_relative( './models/exhibit.rb' )
+require_relative( './models/artist.rb' )
+also_reload( './models/*' )
 
 get '/admin/exhibit' do
   @exhibits = Exhibit.all()
