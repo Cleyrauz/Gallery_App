@@ -76,6 +76,7 @@ Exhibit.all
 Exhibit.find(exhibit1.id)
 Artist.find(artist2.id)
 exhibit1.assing_exhibit_to_an_artist(artist1.id)
+exhibit1.find_exhibit_by_artist(artist1.id)
 
 binding.pry
 artist3.delete
