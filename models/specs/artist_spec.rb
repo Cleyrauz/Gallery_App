@@ -5,7 +5,7 @@ class TestArtist < MiniTest::Test
 
   def setup
     options = {"id" => 1, "name" => "Salvador Dali",
-      "style" => "Surrealism"}
+      "style" => "Surrealism", "image" => "/images/Dali.jpeg"}
 
     @artist = Artist.new(options)
   end
@@ -18,6 +18,11 @@ class TestArtist < MiniTest::Test
   def test_artist_has_style
     result = @artist.style()
     assert_equal("Surrealism", result)
+  end
+
+  def test_artist_has_an_image
+    result = @artist.image()
+    assert_equal("/images/Dali.jpeg", result)
   end
 
 end

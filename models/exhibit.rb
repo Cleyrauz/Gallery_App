@@ -6,7 +6,7 @@ require('pry')
 class Exhibit
 
   attr_reader :id
-  attr_accessor :title, :date, :artist_id, :category
+  attr_accessor :title, :date, :artist_id, :category, :image
 
   def initialize( options )
     @id = options['id'].to_i
@@ -14,6 +14,7 @@ class Exhibit
     @date = options['date'].to_i
     @artist_id = options['artist_id'].to_i
     @category = options['category']
+    @image = options['image']
   end
 
   def save()
@@ -22,14 +23,15 @@ class Exhibit
       title,
       date,
       artist_id,
-      category
+      category,
+      image
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING *"
-    values = [@title, @date, @artist_id, @category]
+    values = [@title, @date, @artist_id, @category, @image]
     exhibit_data = SqlRunner.run(sql, values)
     @id = exhibit_data.first()['id'].to_i
   end
@@ -41,13 +43,14 @@ class Exhibit
      title,
      date,
      artist_id,
-     category
+     category,
+     image
    ) =
    (
-     $1, $2, $3, $4
+     $1, $2, $3, $4, $5
    )
-   WHERE id = $5"
-   values = [@title, @date, @artist_id, @category, @id]
+   WHERE id = $6"
+   values = [@title, @date, @artist_id, @category, @image, @id]
    SqlRunner.run( sql, values )
  end
 

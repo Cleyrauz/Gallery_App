@@ -1,4 +1,12 @@
-<p>Title: <%= @exhibit.title() %></p>
-<p>Created: <%= @exhibit.date() %></p>
-<p>Artist: <%= @exhibit.get_artist_name() %></p>
-<p>Category: <%= @exhibit.category() %></p>
+<div id="exhibit-wrapper">
+  <div class="exhibit">
+    <p>Title: <%= @exhibit.title() %></p>
+    <p>Created: <%= @exhibit.date() %></p>
+    <p>Artist: <%= @exhibit.get_artist_name() %></p>
+    <p>Category: <%= @exhibit.category() %></p>
+    <p>Image: </p>
+    <img src="<%= @exhibit.image %>" height="350" width="350">
+  </div>
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b1e7a53a0efabdc"></script>
+</div>

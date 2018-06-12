@@ -1,2 +1,8 @@
-<p>Name: <%= @artist.name() %></p>
-<p>Style: <%= @artist.style() %></p>
+<div id="artist-wrapper">
+  <div class="artist">
+    <p>Name: <%= @artist.name() %></p>
+    <p>Style: <%= @artist.style() %></p>
+    <p>Image: </p>
+    <img src="<%= @artist.image %>" height="350" width="350">
+  </div>
+</div>

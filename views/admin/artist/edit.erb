@@ -1,9 +1,13 @@
-<form method="post" action="/admin/artist/<%=@artist.id%>/edit">
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="name"/><br />
 
-  <label for="Style">Style:</label>
-  <input id="style" type="text" name="style"/><br />
+  <form class="form-line" method="post" action="/admin/artist/<%=@artist.id%>/edit">
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name"/>
 
-  <input type='submit' value="Update your artist"/>
-</form>
+    <label for="Style">Style:</label>
+    <input id="style" type="text" name="style"/>
+
+    <label for="Image">Image:</label>
+    <input id="image" type="text" name="image"/>
+
+    <input class="button-edit" type='submit' value="Update artist"/>
+  </form>

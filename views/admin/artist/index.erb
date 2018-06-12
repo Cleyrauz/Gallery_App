@@ -1,5 +1,9 @@
-<h1>Artists</h1>
+<div class="page_title">
+<h1>ARTISTS</h1>
+</div>
 
+<div id="artist-wrapper">
+  <div class="artist">
 <table>
   <tr>
     <th>Name</th>
@@ -11,8 +15,14 @@
     <td><a href="/admin/artist/<%= artist.id %>"><%= artist.name %></a></td>
     <td>|</td>
     <td><%= artist.style %></td>
+    <td>|</td>
+    <td><img src="<%= artist.image %>" height="150" width="150"></td>
   </tr>
   <% end %>
 </table>
+  </div>
+</div>
 
-<a href="/admin/artist/new">Create new artist</a>
+<div class="button-box">
+<a class="button_create_artist" href="/admin/artist/new">Create new artist</a>
+</div>

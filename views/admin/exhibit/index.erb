@@ -1,5 +1,9 @@
-<h1>Exhibits</h1>
+<div class="page_title">
+<h1>EXHIBITS</h1>
+</div>
 
+<div id="exhibit-wrapper">
+  <div class="exhibit">
 <table>
   <tr>
     <th>Title</th>
@@ -9,6 +13,8 @@
     <th>Artist</th>
     <th></th>
     <th>Category</th>
+    <th></th>
+    <th>Image</th>
   </tr>
   <% for exhibit in @exhibits %>
   <tr>
@@ -19,8 +25,14 @@
     <td><%= exhibit.get_artist_name%></td>
     <td>|</td>
     <td><%= exhibit.category%></td>
+    <td>|</td>
+    <td><img src="<%= exhibit.image %>" height="150" width="150"></td>
   </tr>
   <% end %>
 </table>
+</div>
+</div>
 
-<a href="/admin/exhibit/new">Create new exhibit</a>
+<div class="button-box">
+<a class="button" href="/admin/exhibit/new">Create new exhibit</a>
+</div>

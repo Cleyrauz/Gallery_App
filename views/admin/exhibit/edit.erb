@@ -1,3 +1,4 @@
+<div class="container_edit_exhibit">
 <form method="post" action="/admin/exhibit/<%=@exhibit.id%>/edit">
   <label for="title">Title:</label>
   <input id="title" type="text" name="title"/><br />
@@ -15,5 +16,9 @@
   <label for="Category">Category:</label>
   <input id="category" type="text" name="category"/><br />
 
-  <input type='submit' value="Update exhibit"/>
+  <laber for="image">Image:</label>
+    <input id="image" type="text" name="image"/>
+
+  <input class="button-edit" type='submit' value="Update exhibit"/>
 </form>
+</div>

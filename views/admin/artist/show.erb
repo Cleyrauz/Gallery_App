@@ -1,10 +1,18 @@
-<p>Name: <%= @artist.name() %></p>
-<p>Style: <%= @artist.style() %></p>
+<div id="artist-wrapper">
+  <div class="artist">
+  <p>Name: <%= @artist.name() %></p>
+  <p>Style: <%= @artist.style() %></p>
+  <p>Image: </p>
+  <img src="<%= @artist.image %>" height="150" width="150">
+</div>
+</div>
 
-<form method="post" action="/admin/artist/<%=@artist.id%>/delete">
-<input type='submit' value="Delete"/>
-</form>
+<div class="button-box">
+  <form method="post" action="/admin/artist/<%=@artist.id%>/delete">
+    <input class="button-show" type='submit' value="Delete"/>
+  </form>
 
-<form method="get" action="/admin/artist/<%=@artist.id%>/edit">
-<input type='submit' value="Edit artist"/>
-</form>
+  <form method="get" action="/admin/artist/<%=@artist.id%>/edit">
+    <input class="button-show" type='submit' value="Edit artist"/>
+  </form>
+</div>

@@ -1,19 +1,48 @@
-<form method="post" action="/admin/exhibit">
-  <laber for="title">Title:</label>
-    <input id="title" type="text" name="title"/>
+<!-- <div class="container_edit_exhibit">
+  <form method="post" action="/admin/exhibit">
+    <laber for="title">Title:</label>
+      <input id="title" type="text" name="title"/><br />
 
-    <laber for="date">Created:</label>
-      <input id="date" type="text" name="date"/>
+      <laber for="date">Created:</label>
+        <input id="date" type="text" name="date"/><br />
 
         <label for="artist_select">Select Artist:</label>
         <select name="artist_id" id="artist_select">
           <% @artists.each do |artist| %>
           <option value="<%= artist.id %>"><%= artist.name %></option>
           <% end %>
-        </select>
+        </select><br />
 
         <laber for="category">Category:</label>
-          <input id="category" type="text" name="category"/>
+          <input id="category" type="text" name="category"/><br/>
 
-          <input type='submit' value="Create exhibit"/>
-        </form>
+          <laber for="image">Image:</label>
+            <input id="image" type="text" name="image"/><br/>
+
+            <input class="button" type='submit' value="Create exhibit"/>
+          </form>
+    </div> -->
+    <div class="container_edit_exhibit">
+    <form method="post" action="/admin/exhibit">
+      <label for="title">Title:</label>
+      <input id="title" type="text" name="title"/><br />
+
+      <label for="date">Created:</label>
+      <input id="date" type="text" name="date"/><br />
+
+      <label for="artist_select">Select Artist:</label>
+      <select name="artist_id" id="artist_select">
+        <% @artists.each do |artist| %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+        <% end %>
+      </select>
+
+      <label for="Category">Category:</label>
+      <input id="category" type="text" name="category"/><br />
+
+      <laber for="image">Image:</label>
+        <input id="image" type="text" name="image"/>
+
+      <input class="button-edit" type='submit' value="Create exhibit"/>
+    </form>
+    </div>

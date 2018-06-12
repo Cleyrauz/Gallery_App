@@ -1,13 +1,21 @@
-<p>Title: <%= @exhibit.title() %></p>
-<p>Created: <%= @exhibit.date() %></p>
-<p>Artist: <%= @exhibit.get_artist_name() %></p>
-<p>Category: <%= @exhibit.category() %></p>
+<div id="exhibit-wrapper">
+  <div class="exhibit">
+    <p>Title: <%= @exhibit.title() %></p>
+    <p>Created: <%= @exhibit.date() %></p>
+    <p>Artist: <%= @exhibit.get_artist_name() %></p>
+    <p>Category: <%= @exhibit.category() %></p>
+    <p>Image: </p>
+    <img src="<%= @exhibit.image %>" height="350" width="350">
+  </div>
+</div>
 
 
-<form method="post" action="/admin/exhibit/<%=@exhibit.id%>/delete">
-<input type='submit' value="Delete"/>
-</form>
+  <div class="button-box">
+    <form method="post" action="/admin/exhibit/<%=@exhibit.id%>/delete">
+      <input class="button-show" type='submit' value="Delete"/>
+    </form>
 
-<form method="get" action="/admin/exhibit/<%=@exhibit.id%>/edit">
-<input type='submit' value="Edit exhibit"/>
-</form>
+    <form method="get" action="/admin/exhibit/<%=@exhibit.id%>/edit">
+      <input class="button-show" type='submit' value="Edit exhibit"/>
+    </form>
+  </div>

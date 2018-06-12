@@ -7,17 +7,20 @@ Exhibit.delete_all()
 
   artist1 = Artist.new({
   "name" => "Salvador Dali",
-  "style" => "Surrealism"
+  "style" => "Surrealism",
+  "image" => "/images/Dali.jpeg"
   })
 
   artist2 = Artist.new({
   "name" => "Gustav Klimt",
-  "style" => "Surrealism"
+  "style" => "Surrealism",
+  "image" => "/images/Klimt.jpeg"
   })
 
   artist3 = Artist.new({
   "name" => "Pablo Picasso",
-  "style" => "Surrealism"
+  "style" => "Surrealism",
+  "image" => "/images/picasso.jpeg"
   })
 
 artist1.save
@@ -25,31 +28,35 @@ artist2.save
 artist3.save
 
 exhibit1 = Exhibit.new({
- "title" => "The persistent of memory",
+ "title" => "The persistence of memory",
  "date" => 1931,
  "artist_id" => artist1.id,
- "category" => "Surrealism"
+ "category" => "Surrealism",
+ "image" => "/images/the_persistence_of_memory.jpeg"
   })
 
  exhibit2 = Exhibit.new({
  "title" => "Melting watch",
  "date" => 1954,
  "artist_id" => artist1.id,
- "category" => "Surrealism"
+ "category" => "Surrealism",
+ "image" => "/images/the_melting_watch.jpeg"
  })
 
  exhibit3 = Exhibit.new({
   "title" => "Girl at the window",
   "date" => 1931,
   "artist_id" => artist3.id,
-  "category" => "Surrealism"
+  "category" => "Surrealism",
+  "image" => "/images/girl_at_the_window.jpeg"
   })
 
   exhibit4 = Exhibit.new({
   "title" => "Guernica",
   "date" => 1937,
   "artist_id" => artist3.id,
-  "category" => "Surrealism"
+  "category" => "Surrealism",
+  "image" => "/images/guernica.jpeg"
   })
 
   exhibit1.save

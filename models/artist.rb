@@ -5,26 +5,28 @@ require('pry')
 class Artist
 
   attr_reader :id
-  attr_accessor :name, :style
+  attr_accessor :name, :style, :image
 
   def initialize( options )
     @id = options['id'].to_i
     @name = options['name']
     @style = options['style']
+    @image = options['image']
   end
 
   def save()
     sql = "INSERT INTO artists
     (
       name,
-      style
+      style,
+      image
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING *"
-    values = [@name, @style]
+    values = [@name, @style, @image]
     artist_data = SqlRunner.run(sql, values)
     @id = artist_data.first()['id'].to_i
   end
@@ -34,13 +36,14 @@ class Artist
    SET
    (
      name,
-     style
+     style,
+     image
    ) =
    (
-     $1, $2
+     $1, $2, $3
    )
-   WHERE id = $3"
-   values = [@name, @style, @id]
+   WHERE id = $4"
+   values = [@name, @style, @image, @id]
    SqlRunner.run( sql, values )
  end
 

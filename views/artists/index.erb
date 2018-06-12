@@ -1,16 +1,26 @@
-<h1>Artists</h1>
+<div class="page_title">
+  <h1>ARTISTS</h1>
+</div>
 
+<div id="artist-wrapper">
+  <div class="artist">
 <table>
   <tr>
     <th>Name</th>
     <th></th>
     <th>Style</th>
+    <th></th>
+    <th>Image</th>
   </tr>
+  </div>
   <% for artist in @artists %>
   <tr>
     <td><a href="/artists/<%= artist.id %>"><%= artist.name %></a></td>
     <td>|</td>
     <td><%= artist.style %></td>
+    <td>|</td>
+    <td><img src="<%= artist.image %>" height="150" width="150"></td>
   </tr>
   <% end %>
 </table>
+</div>
