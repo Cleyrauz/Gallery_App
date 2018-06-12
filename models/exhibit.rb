@@ -97,4 +97,12 @@ class Exhibit
       return result.name
     end
 
+    def self.find_exhibit_by_artist( artist_id )
+      sql = "SELECT * FROM exhibits WHERE artist_id = $1"
+      value = [artist_id]
+      exhibits = SqlRunner.run( sql, value )
+      result = exhibits.map { |exhibit| Exhibit.new( exhibit) }
+      return result
+    end
+
 end

@@ -1,0 +1,21 @@
+
+<div class="page_title">
+<h3>Find exhibits by an artist</h3>
+</div>
+
+<div class="container_search">
+<form method="post" action="/find/artist/exhibits">
+  <label for="artist_select">Select Artist:</label>
+  <select name="artist_id" id="artist_select">
+    <% @artists.each do |artist| %>
+    <option value="<%= artist.id %>"><%= artist.name %></option>
+    <% end %>
+  </select>
+
+  <input class="button-show" type='submit' value="Find exhibits"/>
+</form>
+</div>
+
+<div id="large_image">
+  <a href="/exhibits">Our collection</a>
+</div>

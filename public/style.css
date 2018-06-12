@@ -270,3 +270,8 @@ font-weight: lighter;
   font-family: Tate regular,Arial,"Helvetica Neue",Helvetica,sans-serif;
   position: center;
 }
+.container_search{
+  display: block;
+  text-align: center;
+  position: inherit;
+}

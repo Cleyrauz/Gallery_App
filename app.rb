@@ -27,3 +27,13 @@ get '/exhibits/:id' do
   @exhibit = Exhibit.find(params['id'])
   erb :"exhibits/show"
 end
+
+get '/find/exhibits/artist' do
+  @artists= Artist.all()
+  erb :"exhibits/search_by_artist"
+end
+
+post '/find/artist/exhibits' do
+  @exhibits = Exhibit.find_exhibit_by_artist(params['artist_id'])
+  erb :"exhibits/exhibits_by_artist"
+end
