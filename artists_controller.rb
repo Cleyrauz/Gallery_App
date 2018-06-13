@@ -18,7 +18,7 @@ post '/admin/artist' do
   artist_names = @artists.map {|artist| artist.name.downcase }
   if !artist_names.include?(@new_artist.name.downcase)
     @new_artist.save()
-    erb :"admin/artist/index", :layout => :admin_layout
+    redirect 'admin/artist'
   else
     erb :"admin/artist/sorry", :layout => :admin_layout
   end
