@@ -17,8 +17,8 @@ end
 post '/admin/exhibit' do
   @exhibits = Exhibit.all()
   @new_exhibit = Exhibit.new(params)
-  exhibit_titles = @exhibits.map {|exhibit| exhibit.title }
-  if !exhibit_titles.include?(@new_exhibit.title)
+  exhibit_titles = @exhibits.map {|exhibit| exhibit.title.downcase }
+  if !exhibit_titles.include?(@new_exhibit.title.downcase)
     @new_exhibit.save()
     erb :"admin/exhibit/index", :layout => :admin_layout
   else

@@ -15,8 +15,8 @@ end
 post '/admin/artist' do
   @artists = Artist.all()
   @new_artist = Artist.new(params)
-  artist_names = @artists.map {|artist| artist.name }
-  if !artist_names.include?(@new_artist.name)
+  artist_names = @artists.map {|artist| artist.name.downcase }
+  if !artist_names.include?(@new_artist.name.downcase)
     @new_artist.save()
     erb :"admin/artist/index", :layout => :admin_layout
   else
