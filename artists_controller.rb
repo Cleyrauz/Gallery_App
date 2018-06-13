@@ -13,10 +13,16 @@ get '/admin/artist/new' do
 end
 
 post '/admin/artist' do
-  @artist = Artist.new(params)
-  @artist.save()
   @artists = Artist.all()
-  erb :"admin/artist/index", :layout => :admin_layout
+  @new_artist = Artist.new(params)
+  artist_names = @artists.map {|artist| artist.name }
+  if !artist_names.include?(@new_artist.name)
+    @new_artist.save()
+    erb :"admin/artist/index", :layout => :admin_layout
+  else
+    erb :"admin/artist/sorry", :layout => :admin_layout
+  end
+
 end
 
 get '/admin/artist/:id' do

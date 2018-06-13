@@ -15,10 +15,16 @@ get '/admin/exhibit/new' do
 end
 
 post '/admin/exhibit' do
-  @exhibit = Exhibit.new(params)
-  @exhibit.save()
   @exhibits = Exhibit.all()
-  erb :"admin/exhibit/index", :layout => :admin_layout
+  @new_exhibit = Exhibit.new(params)
+  exhibit_titles = @exhibits.map {|exhibit| exhibit.title }
+  if !exhibit_titles.include?(@new_exhibit.title)
+    @new_exhibit.save()
+    erb :"admin/exhibit/index", :layout => :admin_layout
+  else
+    erb :"admin/exhibit/sorry", :layout => :admin_layout
+  end
+
 end
 
 get '/admin/exhibit/:id' do
