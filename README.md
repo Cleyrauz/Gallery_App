@@ -9,7 +9,7 @@ Tate Modern, British Museum
 
 User Stories - MVP
 
-# Manage Artists
+## Manage Artists
 
 As a gallery manager 
 I want to be able to add artist information 
